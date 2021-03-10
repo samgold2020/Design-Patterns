@@ -35,13 +35,15 @@ function employeeFactory() {
  }
 }
 
+const introduction = document.getElementsByClassName("introduction")[0]
+
 //Function to print out the information of whatever employee is passed in
 function say(){
+  introduction.innerHTML = `Hi, I am ${this.name} and I am a ${this.type}`;
   console.log("Hi, I am " + this.name + " and I am " + this.type);
 }
 
 const allEmployees = new employeeFactory();
-console.log(allEmployees)
 const employees = []
 
 //insert employees into employee array
@@ -54,3 +56,4 @@ employees.forEach( emp => {
   //the call method is used to call say on each element of the employees array
   say.call(emp)
 })
+
